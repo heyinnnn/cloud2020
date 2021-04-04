@@ -1,8 +1,18 @@
 server:
   port: 80
+
 spring:
   application:
     name: cloud-provider-order
-  cloud:
-    zookeeper:
-      connect-string: 118.178.91.123:2181
+
+
+
+#  cloud:
+#    zookeeper:
+#      connect-string: 118.178.91.123:2181
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/

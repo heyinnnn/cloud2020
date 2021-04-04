@@ -18,14 +18,16 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("/consumer")
 public class OrderZKController {
 
-    private static final String INVOKE_URL = "http://cloud-provider-payment";
+    private static final String INVOKE_URL = "http://cloud-payment-service";
+//    private static final String INVOKE_URL = "http://localhost:8001";
+
 
     @Autowired
     private RestTemplate restTemplate;
 
     @RequestMapping("/payment/zk")
     public String get() {
-        String result = restTemplate.getForObject(INVOKE_URL + "/payment/zk", String.class);
+        String result = restTemplate.getForObject(INVOKE_URL + "/payment/get/31", String.class);
         return result;
     }
 
